@@ -46,14 +46,14 @@ elsif move == 9 && @square9 != "O"
 newBoard
 end
 
-=begin def checkWin
-  if @square1 == "X"
-    puts "You win!"
-  end
-  newBoard
-  exit
-end
-=end
+# def checkWin
+#  if (@square1 == "X")
+#    puts "You win!"
+#  end
+#  newBoard
+#  exit
+# end
+
 
 def player2Move
   puts "Player 2 make your move."
