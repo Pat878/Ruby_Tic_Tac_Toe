@@ -46,13 +46,20 @@ elsif move == 9 && @square9 != "O"
 newBoard
 end
 
-# def checkWin
-#  if (@square1 == "X")
-#    puts "You win!"
-#  end
-#  newBoard
-#  exit
-# end
+def checkWin
+  if (@square1 == "X" && @square2 == "X" && @square3 == "X") ||
+    (@square4 == "X" && @square5 == "X" && @square6 == "X") ||
+    (@square7 == "X" && @square8 == "X" && @square9 == "X") ||
+    (@square1 == "X" && @square4 == "X" && @square7 == "X") ||
+    (@square2 == "X" && @square5 == "X" && @square8 == "X") ||
+    (@square3 == "X" && @square6 == "X" && @square9 == "X") ||
+    (@square1 == "X" && @square5 == "X" && @square9 == "X") ||
+    (@square1 == "X" && @square5 == "X" && @square7 == "X")
+    puts "Player 1 wins!"
+    exit
+  end
+  newBoard
+end
 
 
 def player2Move
