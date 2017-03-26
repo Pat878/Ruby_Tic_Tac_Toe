@@ -43,7 +43,9 @@ elsif move == 8 && @square8 != "O"
 elsif move == 9 && @square9 != "O"
 @square9 = "X"
   end
+  checkWin
 newBoard
+player2Move
 end
 
 def checkWin
@@ -56,10 +58,21 @@ def checkWin
     (@square1 == "X" && @square5 == "X" && @square9 == "X") ||
     (@square1 == "X" && @square5 == "X" && @square7 == "X")
     puts "Player 1 wins!"
+    newBoard
+    exit
+  elsif (@square1 == "O" && @square2 == "O" && @square3 == "O") ||
+    (@square4 == "O" && @square5 == "O" && @square6 == "O") ||
+    (@square7 == "O" && @square8 == "O" && @square9 == "O") ||
+    (@square1 == "O" && @square4 == "O" && @square7 == "O") ||
+    (@square2 == "O" && @square5 == "O" && @square8 == "O") ||
+    (@square3 == "O" && @square6 == "O" && @square9 == "O") ||
+    (@square1 == "O" && @square5 == "O" && @square9 == "O") ||
+    (@square1 == "O" && @square5 == "O" && @square7 == "O")
+    puts "Player 2 wins!"
+    newBoard
     exit
   end
-  newBoard
-end
+  end
 
 
 def player2Move
@@ -84,7 +97,9 @@ elsif move == 8 && @square8 != "X"
 elsif move == 9 && @square9 != "X"
 @square9 = "O"
   end
+  checkWin
 newBoard
+player1Move
   end
 
 end
@@ -92,4 +107,3 @@ end
 a = Game.new
 a.board
 a.player1Move
-a.player2Move
