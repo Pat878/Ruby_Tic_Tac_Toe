@@ -21,6 +21,11 @@ def newBoard
 
 end
 
+def turn
+  @i = 1.next
+
+end
+
 def player1Move
   puts "\nPlayer 1, make your move."
   move = gets.chomp.to_i
@@ -43,12 +48,14 @@ elsif move == 8 && @square8 != "O"
 elsif move == 9 && @square9 != "O"
 @square9 = "X"
   end
+  puts turn
   checkWin
 newBoard
 player2Move
 end
 
 def checkWin
+  @win = false
   if (@square1 == "X" && @square2 == "X" && @square3 == "X") ||
     (@square4 == "X" && @square5 == "X" && @square6 == "X") ||
     (@square7 == "X" && @square8 == "X" && @square9 == "X") ||
@@ -58,6 +65,7 @@ def checkWin
     (@square1 == "X" && @square5 == "X" && @square9 == "X") ||
     (@square1 == "X" && @square5 == "X" && @square7 == "X")
     puts "Player 1 wins!"
+    @win = true
     newBoard
     exit
   elsif (@square1 == "O" && @square2 == "O" && @square3 == "O") ||
@@ -69,6 +77,11 @@ def checkWin
     (@square1 == "O" && @square5 == "O" && @square9 == "O") ||
     (@square1 == "O" && @square5 == "O" && @square7 == "O")
     puts "Player 2 wins!"
+    @win = true
+    newBoard
+    exit
+  elsif turn == 9 && @win == false
+    puts "It's a draw!"
     newBoard
     exit
   end
