@@ -17,12 +17,12 @@ def board
 end
 
 def newBoard
-  puts "[#{@square1}] [#{@square2}] [#{@square3}]\n[#{@square4}] [#{@square5}] [#{@square6}]\n[#{@square7}] [#{@square8}] [#{@square9}]\n"
+  puts "\n[#{@square1}] [#{@square2}] [#{@square3}]\n[#{@square4}] [#{@square5}] [#{@square6}]\n[#{@square7}] [#{@square8}] [#{@square9}]\n"
 
 end
 
 def player1Move
-  puts "Player 1, make your move."
+  puts "\nPlayer 1, make your move."
   move = gets.chomp.to_i
   if move == 1 && @square1 != "O"
 @square1 = "X"
@@ -76,7 +76,7 @@ def checkWin
 
 
 def player2Move
-  puts "Player 2 make your move."
+  puts "\nPlayer 2 make your move."
   move = gets.chomp.to_i
   if move == 1 && @square1 != "X"
     @square1 = "O"
