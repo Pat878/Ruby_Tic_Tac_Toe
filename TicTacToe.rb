@@ -22,8 +22,8 @@ def newBoard
 end
 
 def turn
-  @i = 1.next
-
+  @i ||= -1
+  @i += 1
 end
 
 def player1Move
@@ -48,7 +48,7 @@ elsif move == 8 && @square8 != "O"
 elsif move == 9 && @square9 != "O"
 @square9 = "X"
   end
-  puts turn
+turn
   checkWin
 newBoard
 player2Move
@@ -80,7 +80,7 @@ def checkWin
     @win = true
     newBoard
     exit
-  elsif turn == 9 && @win == false
+  elsif @i == 8 && @win == false
     puts "It's a draw!"
     newBoard
     exit
@@ -110,8 +110,9 @@ elsif move == 8 && @square8 != "X"
 elsif move == 9 && @square9 != "X"
 @square9 = "O"
   end
+  turn
   checkWin
-newBoard
+  newBoard
 player1Move
   end
 
