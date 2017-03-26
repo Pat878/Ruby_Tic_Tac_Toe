@@ -51,6 +51,36 @@ def player1Move
   player2Move
 end
 
+def player2Move
+  puts "\nPlayer 2 make your move."
+  move = gets.chomp.to_i
+  if move == 1 && @square1 != "X"
+    @square1 = "O"
+  elsif move == 2 && @square2 != "X"
+  @square2 = "O"
+  elsif move == 3 && @square3 != "X"
+  @square3 = "O"
+  elsif move == 4 && @square4 != "X"
+  @square4 = "O"
+  elsif move == 5 && @square5 != "X"
+  @square5 = "O"
+  elsif move == 6 && @square6 != "X"
+  @square6 = "O"
+  elsif move == 7 && @square7 != "X"
+  @square7 = "O"
+  elsif move == 8 && @square8 != "X"
+  @square8 = "O"
+  elsif move == 9 && @square9 != "X"
+  @square9 = "O"
+  end
+  turn
+  checkWin
+  newBoard
+  player1Move
+  end
+
+end
+
 def checkWin
   @win = false
   if (@square1 == "X" && @square2 == "X" && @square3 == "X") ||
@@ -82,37 +112,6 @@ def checkWin
     newBoard
     exit
   end
-end
-
-
-def player2Move
-  puts "\nPlayer 2 make your move."
-  move = gets.chomp.to_i
-  if move == 1 && @square1 != "X"
-    @square1 = "O"
-  elsif move == 2 && @square2 != "X"
-  @square2 = "O"
-  elsif move == 3 && @square3 != "X"
-  @square3 = "O"
-  elsif move == 4 && @square4 != "X"
-  @square4 = "O"
-  elsif move == 5 && @square5 != "X"
-  @square5 = "O"
-  elsif move == 6 && @square6 != "X"
-  @square6 = "O"
-  elsif move == 7 && @square7 != "X"
-  @square7 = "O"
-  elsif move == 8 && @square8 != "X"
-  @square8 = "O"
-  elsif move == 9 && @square9 != "X"
-  @square9 = "O"
-  end
-  turn
-  checkWin
-  newBoard
-  player1Move
-  end
-
 end
 
 a = Game.new
